@@ -14,11 +14,11 @@ gem 'cpf_cnpj'
 
 And then execute:
 
-    $ bundle
+	$ bundle
 
 Or install it yourself as:
 
-    $ gem install cpf_cnpj
+	$ gem install cpf_cnpj
 
 ## Usage
 
