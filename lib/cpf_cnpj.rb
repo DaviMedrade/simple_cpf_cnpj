@@ -23,4 +23,17 @@ module CpfCnpj
 			cpf_cnpj
 		end
 	end
+
+	def self._mod11_check_digit(digits, mult_max)
+		sum = 0
+		mult = 2
+		digits[0..-2].reverse.each_char do |digit|
+			sum += mult * digit.to_i
+			mult += 1
+			mult = 2 if mult > mult_max
+		end
+		sum = 11 - (sum % 11)
+		sum = 0 if sum > 9
+		digits[-1].to_i == sum
+	end
 end
