@@ -12,4 +12,15 @@ module CpfCnpj
 		else ; nil
 		end
 	end
+
+	def self.format(cpf_cnpj)
+		case type_of(cpf_cnpj)
+		when :cpf
+			"#{cpf_cnpj[0..2]}.#{cpf_cnpj[3..5]}.#{cpf_cnpj[6..8]}-#{cpf_cnpj[9..10]}"
+		when :cnpj
+			"#{cpf_cnpj[0..1]}.#{cpf_cnpj[2..4]}.#{cpf_cnpj[5..7]}/#{cpf_cnpj[8..11]}-#{cpf_cnpj[12..13]}"
+		else
+			cpf_cnpj
+		end
+	end
 end
