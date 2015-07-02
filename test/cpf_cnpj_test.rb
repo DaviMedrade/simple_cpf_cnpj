@@ -41,4 +41,23 @@ class CpfCnpjTest < Minitest::Test
 			CpfCnpj.type_of(VALID_CPF.to_i)
 		end
 	end
+
+	def test_format_formats_a_cpf
+		assert_equal("123.456.789-87", CpfCnpj.format("12345678987"))
+	end
+
+	def test_format_formats_a_cnpj
+		assert_equal("12.345.678/9876-54", CpfCnpj.format("12345678987654"))
+	end
+
+	def test_format_accepts_random_characters
+		assert_equal("abc.def.ghi-jk", CpfCnpj.format('abcdefghijk'))
+		assert_equal("ab.cde.fgh/ijkl-mn", CpfCnpj.format('abcdefghijklmn'))
+	end
+
+	def test_format_returns_sender_if_not_cpf_cnpj
+		["largelargelarge_string", "small_str"].each do |obj|
+			assert_same(obj, CpfCnpj.format(obj))
+		end
+	end
 end
