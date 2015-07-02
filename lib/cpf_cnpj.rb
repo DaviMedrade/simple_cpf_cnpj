@@ -36,4 +36,8 @@ module CpfCnpj
 		sum = 0 if sum > 9
 		digits[-1].to_i == sum
 	end
+
+	def self._mod11_check(digits, mult_max)
+		_mod11_check_digit(digits[0..-2], mult_max) && _mod11_check_digit(digits, mult_max)
+	end
 end
