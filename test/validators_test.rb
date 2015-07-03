@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class CpfCnpjValidatorsTest < CpfCnpjTest
+class CpfCnpjTest::ValidatorsTest < CpfCnpjTest
 	class ValidCpfTest < CpfCnpjTest
 		def test_returns_true_when_valid
 			assert(CpfCnpj.valid_cpf?(VALID_CPF))

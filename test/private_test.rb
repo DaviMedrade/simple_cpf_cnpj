@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class CpfCnpjPrivateTest < CpfCnpjTest
+class CpfCnpjTest::PrivateTest < CpfCnpjTest
 	# Correct maximum multipliers to be used with the mod11 algorithm
 	MAX_MULTI_CPF = 11
 	MAX_MULTI_CNPJ = 9

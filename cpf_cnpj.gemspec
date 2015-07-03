@@ -1,17 +1,17 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'cpf_cnpj/version'
+require 'simple_cpf_cnpj/version'
 
 Gem::Specification.new do |spec|
-	spec.name          = "cpf_cnpj"
+	spec.name          = "simple_cpf_cnpj"
 	spec.version       = CpfCnpj::VERSION
 	spec.authors       = ["David Santos"]
 	spec.email         = ["david@dsantosdev.com"]
 
-	spec.summary       = %q{Provides a module with functions to detect, format, and validate CPFs and CNPJs.}
-	spec.description   = %q{CpfCnpj is a module that provides functions to detect, validate, and format CPFs and CNPJs (Brazilian federal ID numbers).}
-	spec.homepage      = "https://github.com/davidsantos-br/cpf_cnpj"
+	spec.summary       = %q{Provides the module CpfCnpj, with functions to detect, format, and validate CPFs and CNPJs.}
+	spec.description   = %q{Provides the module CpfCnpj, with functions to detect, validate, and format CPFs and CNPJs (Brazilian federal ID numbers).}
+	spec.homepage      = "https://github.com/davidsantos-br/simple_cpf_cnpj"
 	spec.license       = "MIT"
 
 	spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }

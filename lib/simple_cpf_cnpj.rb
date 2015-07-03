@@ -1,4 +1,4 @@
-require "cpf_cnpj/version"
+require "simple_cpf_cnpj/version"
 
 # +CpfCnpj+ is a module that provides utility methods for dealing with CPFs and CNPJs.
 #
