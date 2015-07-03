@@ -21,10 +21,10 @@ task 'doc:prepare' => [:doc] do |t|
 			<head>
 				<meta http-equiv='content-type' content='text/html; charset=utf-8' />
 				<meta http-equiv='refresh' content='0; ./v#{CpfCnpj::VERSION}/index.html' />
-				<title>Redirecting&ellip;</title>
+				<title>Redirecting&hellip;</title>
 			</head>
-			<body>Redirecting&ellip;</body>
-		</html>"
+			<body>Redirecting&hellip;</body>
+		</html>
 	EOT
 end
 
