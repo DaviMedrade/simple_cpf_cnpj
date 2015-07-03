@@ -54,4 +54,10 @@ module CpfCnpj
 	def self._mod11_check(digits, mult_max)
 		_mod11_check_digit(digits[0..-2], mult_max) && _mod11_check_digit(digits, mult_max)
 	end
+
+	# ruby 1.8.7 doesn't have String#ord, and in versions after 1.8.7 String#[num] returns a
+	# one-character string instead of the byte value of the character
+	def self._ord(str)
+		str.respond_to?(:ord) ? str.ord : str[0]
+	end
 end
