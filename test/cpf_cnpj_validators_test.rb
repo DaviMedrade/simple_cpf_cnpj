@@ -30,4 +30,29 @@ class CpfCnpjValidatorsTest < CpfCnpjTest
 			refute(CpfCnpj.valid_cnpj?(VALID_MOD11_CNPJ_TOO_LONG))
 		end
 	end
+
+	class ValidCpfCnpjTest < CpfCnpjTest
+		def test_returns_true_when_valid_cpf
+			assert(CpfCnpj.valid_cpf_cnpj?(VALID_CPF))
+		end
+
+		def test_returns_true_when_valid_cnpj
+			assert(CpfCnpj.valid_cpf_cnpj?(VALID_CNPJ))
+		end
+
+		def test_returns_false_when_invalid_cpf
+			refute(CpfCnpj.valid_cpf_cnpj?(INVALID_CPF))
+		end
+
+		def test_returns_false_when_invalid_cnpj
+			refute(CpfCnpj.valid_cpf_cnpj?(INVALID_CNPJ))
+		end
+
+		def test_returns_false_when_wrong_length
+			refute(CpfCnpj.valid_cpf_cnpj?(VALID_MOD11_CPF_TOO_SHORT))
+			refute(CpfCnpj.valid_cpf_cnpj?(VALID_MOD11_CPF_TOO_LONG))
+			refute(CpfCnpj.valid_cpf_cnpj?(VALID_MOD11_CNPJ_TOO_SHORT))
+			refute(CpfCnpj.valid_cpf_cnpj?(VALID_MOD11_CNPJ_TOO_LONG))
+		end
+	end
 end
