@@ -28,6 +28,10 @@ module CpfCnpj
 		return type_of(cpf) == :cpf && _mod11_check(cpf, 11)
 	end
 
+	def self.valid_cnpj?(cnpj)
+		return type_of(cnpj) == :cnpj && _mod11_check(cnpj, 9)
+	end
+
 	def self._mod11_check_digit(digits, mult_max)
 		sum = 0
 		mult = 2
