@@ -40,7 +40,7 @@ module CpfCnpj
 		sum = 0
 		mult = 2
 		digits[0..-2].reverse.each_char do |digit|
-			digit = digit.ord - 48
+			digit = _int_value(digit)
 			return false unless digit.between?(0, 9)
 			sum += mult * digit
 			mult += 1
@@ -48,7 +48,7 @@ module CpfCnpj
 		end
 		sum = 11 - (sum % 11)
 		sum = 0 if sum > 9
-		(digits[-1].ord - 48) == sum
+		_int_value(digits[-1]) == sum
 	end
 
 	def self._mod11_check(digits, mult_max)
@@ -56,8 +56,10 @@ module CpfCnpj
 	end
 
 	# ruby 1.8.7 doesn't have String#ord, and in versions after 1.8.7 String#[num] returns a
-	# one-character string instead of the byte value of the character
-	def self._ord(str)
-		str.respond_to?(:ord) ? str.ord : str[0]
+	# one-character string instead of the byte value of the character.
+	# Since the return of this is always used to perform what is essentially an unclamped to_i
+	# on the first character, do it right here.
+	def self._int_value(str)
+		(str.respond_to?(:ord) ? str.ord : str[0]) - 48
 	end
 end
