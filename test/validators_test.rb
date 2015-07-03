@@ -14,6 +14,12 @@ class CpfCnpjTest::ValidatorsTest < CpfCnpjTest
 			refute(CpfCnpj.valid_cpf?(VALID_MOD11_CPF_TOO_SHORT))
 			refute(CpfCnpj.valid_cpf?(VALID_MOD11_CPF_TOO_LONG))
 		end
+
+		def test_returns_false_when_obviously_fake
+			0.upto(9) do |d|
+				refute(CpfCnpj.valid_cpf?(d.to_s * 11))
+			end
+		end
 	end
 
 	class ValidCnpjTest < CpfCnpjTest
@@ -28,6 +34,12 @@ class CpfCnpjTest::ValidatorsTest < CpfCnpjTest
 		def test_returns_false_when_not_cnpj
 			refute(CpfCnpj.valid_cnpj?(VALID_MOD11_CNPJ_TOO_SHORT))
 			refute(CpfCnpj.valid_cnpj?(VALID_MOD11_CNPJ_TOO_LONG))
+		end
+
+		def test_returns_false_when_obviously_fake
+			0.upto(9) do |d|
+				refute(CpfCnpj.valid_cnpj?(d.to_s * 14))
+			end
 		end
 	end
 
