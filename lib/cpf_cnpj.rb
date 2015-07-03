@@ -24,6 +24,10 @@ module CpfCnpj
 		end
 	end
 
+	def self.valid_cpf?(cpf)
+		return type_of(cpf) == :cpf && _mod11_check(cpf, 11)
+	end
+
 	def self._mod11_check_digit(digits, mult_max)
 		sum = 0
 		mult = 2
