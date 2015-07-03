@@ -14,6 +14,8 @@ require "simple_cpf_cnpj/version"
 # One way to do that is, for example:
 # 	CpfCnpj.valid_cpf?(formatted_cpf.gsub(/\D/, ''))
 module CpfCnpj
+	BLACKLIST_CPF = %w{00000000000 11111111111 22222222222 33333333333 44444444444 55555555555 66666666666 77777777777 88888888888 99999999999}
+	BLACKLIST_CNPJ = %w{00000000000000 11111111111111 22222222222222 33333333333333 44444444444444 55555555555555 66666666666666 77777777777777 88888888888888 99999999999999}
 	# Checks the length of +cpf_or_cnpj+ to determine if it's a CPF or a CNPJ.
 	#
 	# 	CpfCnpj.type_of("12345678987") # 11 characters
@@ -74,7 +76,7 @@ module CpfCnpj
 	# 	CpfCnpj.valid_cpf?(11026822840)
 	# 	# ArgumentError: argument must be a string or nil
 	def self.valid_cpf?(cpf)
-		return type_of(cpf) == :cpf && _mod11_check(cpf, 11)
+		return type_of(cpf) == :cpf && !BLACKLIST_CPF.include?(cpf) && _mod11_check(cpf, 11)
 	end
 
 	# Validates +cnpj+ as a CNPJ by verifying that the check digits match.
@@ -90,7 +92,7 @@ module CpfCnpj
 	# 	CpfCnpj.valid_cnpj?(63871464000193)
 	# 	# ArgumentError: argument must be a string or nil
 	def self.valid_cnpj?(cnpj)
-		return type_of(cnpj) == :cnpj && _mod11_check(cnpj, 9)
+		return type_of(cnpj) == :cnpj && !BLACKLIST_CNPJ.include?(cnpj) && _mod11_check(cnpj, 9)
 	end
 
 	# Validates +cnpj_or_cnpj+ as either a CPF or a CNPJ by verifying that the check digits match.
