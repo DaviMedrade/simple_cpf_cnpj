@@ -35,4 +35,11 @@ class CpfCnpjPrivateTest < CpfCnpjTest
 			refute(CpfCnpj._mod11_check(INVALID_CNPJ, MAX_MULTI_CNPJ))
 		end
 	end
+
+	class OrdTest < CpfCnpjTest
+		def test_returns_the_ascii_code
+			assert_equal(65, CpfCnpj._ord("A"))
+			assert_equal(48, CpfCnpj._ord("0"))
+		end
+	end
 end
