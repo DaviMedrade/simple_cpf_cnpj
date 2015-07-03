@@ -28,13 +28,15 @@ module CpfCnpj
 		sum = 0
 		mult = 2
 		digits[0..-2].reverse.each_char do |digit|
-			sum += mult * digit.to_i
+			digit = digit.ord - 48
+			return false unless digit.between?(0, 9)
+			sum += mult * digit
 			mult += 1
 			mult = 2 if mult > mult_max
 		end
 		sum = 11 - (sum % 11)
 		sum = 0 if sum > 9
-		digits[-1].to_i == sum
+		(digits[-1].ord - 48) == sum
 	end
 
 	def self._mod11_check(digits, mult_max)
