@@ -110,6 +110,6 @@ https://github.com/davidsantos-br/simple_cpf_cnpj/issues
 
 ## Licença e copyright
 
-Copyright (c) 2015 David Santos
+Copyright © 2015 David Santos
 
 Este software é publicado sob a licença MIT, que pode ser encontrada no arquivo [LICENSE](rdoc-ref:LICENSE-pt).
