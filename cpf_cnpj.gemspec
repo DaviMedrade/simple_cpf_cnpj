@@ -9,8 +9,12 @@ Gem::Specification.new do |spec|
 	spec.authors       = ["David Santos"]
 	spec.email         = ["david@dsantosdev.com"]
 
-	spec.summary       = %q{Provides the module CpfCnpj, with functions to detect, format, and validate CPFs and CNPJs.}
-	spec.description   = %q{Provides the module CpfCnpj, with functions to detect, validate, and format CPFs and CNPJs (Brazilian federal ID numbers).}
+	spec.summary       = %q{Provides the module CpfCnpj, with methods that detect, format, and validate CPFs and CNPJs.}
+	spec.description   = <<EOT
+Provides the module CpfCnpj, with methods that detect, validate, and format CPFs and CNPJs (Brazilian federal ID numbers).
+//
+Fornece o módulo CpfCnpj, com funções que detectam, validam, e formatam CPFs e CNPJs.
+EOT
 	spec.homepage      = "https://github.com/davidsantos-br/simple_cpf_cnpj"
 	spec.license       = "MIT"
 
