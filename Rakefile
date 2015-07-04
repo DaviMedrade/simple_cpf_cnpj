@@ -1,5 +1,3 @@
-require "codeclimate-test-reporter" if RUBY_VERSION > '1.8.7'
-CodeClimate::TestReporter.start if ENV['CODECLIMATE_REPO_TOKEN'] && defined?(CodeClimate)
 require "bundler/gem_tasks"
 require "rake/testtask"
 require "rdoc/task"
