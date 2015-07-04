@@ -7,14 +7,11 @@
 
 **Versão em Português:** [README-pt.md](rdoc-ref:README-pt.md)
 
-The gem `simple_cpf_cnpj` provides the module CpfCnpj, which has utility
-methods for dealing with CPFs and CNPJs.
+The gem `simple_cpf_cnpj` provides the module CpfCnpj, which has utility methods for dealing with CPFs and CNPJs.
 
-A CPF is a Brazilian federal ID number issued to natural persons, and a CNPJ
-is its counterpart for juridic persons (companies and the like).
+A CPF is a Brazilian federal ID number issued to natural persons, and a CNPJ is its counterpart for juridic persons (companies and the like).
 
-The module provides methods to differentiate a CPF from a CNPJ, format,
-and validate the numbers by verifying the check digits.
+The module provides methods to differentiate a CPF from a CNPJ, format, and validate the numbers by verifying the check digits.
 
 ## Compatibility
 
@@ -52,8 +49,7 @@ require 'simple_cpf_cnpj'
 
 ### CPF/CNPJ representation
 
-The methods in this module expect CPFs/CNPJs to be passed as strings comprised only of
-numeric characters. If the string you have is formatted, it's up to you to remove the punctuation before calling CpfCnpj methods.
+The methods in this module expect CPFs/CNPJs to be passed as strings comprised only of numeric characters. If the string you have is formatted, it's up to you to remove the punctuation before calling CpfCnpj methods.
 
 Here's an example of how to do that:
 
@@ -62,8 +58,7 @@ CpfCnpj.valid_cpf?(formatted_cpf.gsub(/\D/, ''))
 ```
 
 ### Validating CPFs and CNPJs
-Use CpfCnpj.valid_cpf?, CpfCnpj.valid_cnpj?, or CpfCnpj.valid_cpf_cnpj? to
-check if a number is valid.
+Use CpfCnpj.valid_cpf?, CpfCnpj.valid_cnpj?, or CpfCnpj.valid_cpf_cnpj? to check if a number is valid.
 
 ```ruby
 CpfCnpj.valid_cpf?("12345678900") # invalid
@@ -91,9 +86,7 @@ CpfCnpj.format("01234567000198") # 14 characters (CNPJ)
 ```
 
 ### Telling CPFs and CNPJs apart
-Use CpfCnpj.type_of to determine if a number is a CPF or a CNPJ. Note that
-this check is only based on the length of the string. The actual characters in
-the string aren't checked at all.
+Use CpfCnpj.type_of to determine if a number is a CPF or a CNPJ. Note that this check is only based on the length of the string. The actual characters in the string aren't checked at all.
 
 ```ruby
 CpfCnpj.type_of("12345678987") # 11 characters
@@ -106,12 +99,9 @@ CpfCnpj.type_of("01234567000198") # 14 characters
 
 ## Development
 
-**Note:** this is not necessary in order to use the gem, only to make changes
-or run the included tests.
+**Note:** this is not necessary in order to use the gem, only to make changes or run the included tests.
 
-After checking out the repo, run `bin/setup` to install dependencies. Then,
-run `rake test` to run the tests. You can also run `bin/console` for an
-interactive prompt that will allow you to experiment.
+After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
 ## Contributing
 
@@ -122,5 +112,4 @@ https://github.com/davidsantos-br/simple_cpf_cnpj.
 
 Copyright (c) 2015 David Santos
 
-This software is released under the MIT license, which can be found in the
-file [LICENSE](rdoc-ref:LICENSE).
+This software is released under the MIT license, which can be found in the file [LICENSE](rdoc-ref:LICENSE).
