@@ -1,5 +1,10 @@
 # simple_cpf_cnpj
 
+[![Gem Version](https://badge.fury.io/rb/simple_cpf_cnpj.svg)](https://rubygems.org/gems/simple_cpf_cnpj)
+[![Build Status](https://travis-ci.org/davidsantos-br/simple_cpf_cnpj.svg)](https://travis-ci.org/davidsantos-br/simple_cpf_cnpj)
+[![Code Climate](https://codeclimate.com/github/davidsantos-br/simple_cpf_cnpj/badges/gpa.svg)](https://codeclimate.com/github/davidsantos-br/simple_cpf_cnpj)
+[![Test Coverage](https://codeclimate.com/github/davidsantos-br/simple_cpf_cnpj/badges/coverage.svg)](https://codeclimate.com/github/davidsantos-br/simple_cpf_cnpj/coverage)
+
 The gem `simple_cpf_cnpj` provides the module CpfCnpj, which has utility
 methods for dealing with CPFs and CNPJs.
 
