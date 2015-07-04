@@ -11,7 +11,7 @@ end
 RDoc::Task.new(:doc) do |rd|
 	rd.main = "README.md"
 	rd.title = "simple_cpf_cnpj -- CPF/CNPJ utility methods"
-	rd.rdoc_files.include("README.md", "LICENSE", "lib/**/*.rb")
+	rd.rdoc_files.include("README.md", "README-pt.md", "LICENSE", "LICENSE-pt", "lib/**/*.rb")
 	rd.rdoc_dir = "doc/v#{CpfCnpj::VERSION}"
 end
 

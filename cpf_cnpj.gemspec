@@ -12,7 +12,9 @@ Gem::Specification.new do |spec|
 	spec.summary       = %q{Provides the module CpfCnpj, with methods that detect, format, and validate CPFs and CNPJs.}
 	spec.description   = <<EOT
 Provides the module CpfCnpj, with methods that detect, validate, and format CPFs and CNPJs (Brazilian federal ID numbers).
+
 //
+
 Fornece o módulo CpfCnpj, com funções que detectam, validam, e formatam CPFs e CNPJs.
 EOT
 	spec.homepage      = "https://github.com/davidsantos-br/simple_cpf_cnpj"
@@ -23,7 +25,7 @@ EOT
 	spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
 	spec.require_paths = ["lib"]
 	spec.required_ruby_version = '>= 1.8.7'
-	spec.extra_rdoc_files = ['README.md', 'LICENSE']
+	spec.extra_rdoc_files = ['README.md', 'README-pt.md', 'LICENSE', 'LICENSE-pt']
 	spec.rdoc_options  << '--title' << 'simple_cpf_cnpj -- CPF/CNPJ utility methods' << '--main' << 'README.md'
 
 	spec.add_development_dependency "bundler", "~> 1.10"
