@@ -5,6 +5,8 @@
 [![Code Climate](https://codeclimate.com/github/davidsantos-br/simple_cpf_cnpj/badges/gpa.svg)](https://codeclimate.com/github/davidsantos-br/simple_cpf_cnpj)
 [![Test Coverage](https://codeclimate.com/github/davidsantos-br/simple_cpf_cnpj/badges/coverage.svg)](https://codeclimate.com/github/davidsantos-br/simple_cpf_cnpj/coverage)
 
+**Versão em Português:** [README-pt.md](rdoc-ref:README-pt.md)
+
 The gem `simple_cpf_cnpj` provides the module CpfCnpj, which has utility
 methods for dealing with CPFs and CNPJs.
 
