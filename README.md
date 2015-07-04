@@ -1,28 +1,17 @@
 # simple_cpf_cnpj
 
-The gem `simple_cpf_cnpj` provides the module `CpfCnpj`, with utility
+The gem `simple_cpf_cnpj` provides the module CpfCnpj, which has utility
 methods for dealing with CPFs and CNPJs.
 
 A CPF is a Brazilian federal ID number issued to natural persons, and a CNPJ
 is its counterpart for juridic persons (companies and the like).
 
-The module provides methods for differentiating a CPF from a CNPJ, formatting,
-and validating the numbers by verifying the check digits.
-
-### Expected format
-
-The methods in this module expect CPFs/CNPJs as strings, with only numbers. If
-the string is formatted, it's up to you to remove the punctuation.
-
-For example:
-
-```ruby
-CpfCnpj.valid_cpf?(formatted_cpf.gsub(/\D/, ''))
-```
+The module provides methods to differentiate a CPF from a CNPJ, format,
+and validate the numbers by verifying the check digits.
 
 ## Compatibility
 
-The code has been tested with MRI Ruby (1.8.7, 1.9.2, 1.9.3, 2.0.0, 2.1, and 2.2), JRuby, and Ruby Enterprise Edition 1.8.7.
+The code is tested with Ruby (1.8.7, 1.9.2, 1.9.3, 2.0.0, 2.1, and 2.2), JRuby, and Ruby Enterprise Edition 1.8.7.
 
 ## Installation
 
@@ -54,7 +43,18 @@ If necessary for your installation, add this to your code in the appropriate pla
 require 'simple_cpf_cnpj'
 ```
 
-### Validate
+### CPF/CNPJ representation
+
+The methods in this module expect CPFs/CNPJs to be passed as strings comprised only of
+numeric characters. If the string you have is formatted, it's up to you to remove the punctuation before calling CpfCnpj methods.
+
+Here's an example of how to do that:
+
+```ruby
+CpfCnpj.valid_cpf?(formatted_cpf.gsub(/\D/, ''))
+```
+
+### Validating CPFs and CNPJs
 Use CpfCnpj.valid_cpf?, CpfCnpj.valid_cnpj?, or CpfCnpj.valid_cpf_cnpj? to
 check if a number is valid.
 
@@ -73,8 +73,8 @@ CpfCnpj.valid_cpf_cnpj?("63871464000193") # valid CNPJ
 # => true
 ```
 
-### Format
-Use CpfCnpj.format to format a CPF or CNPJ.
+### Formatting CPFs and CNPJs
+Use CpfCnpj.format to get a formatted representation of a CPF or CNPJ.
 
 ```ruby
 CpfCnpj.format("12345678987") # 11 characters (CPF)
@@ -83,7 +83,7 @@ CpfCnpj.format("01234567000198") # 14 characters (CNPJ)
 # => "01.234.567/0001-98"
 ```
 
-### Identify the type
+### Telling CPFs and CNPJs apart
 Use CpfCnpj.type_of to determine if a number is a CPF or a CNPJ. Note that
 this check is only based on the length of the string. The actual characters in
 the string aren't checked at all.
