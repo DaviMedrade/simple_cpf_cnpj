@@ -95,7 +95,7 @@ module CpfCnpj
 		return type_of(cnpj) == :cnpj && !BLACKLIST_CNPJ.include?(cnpj) && _mod11_check(cnpj, 9)
 	end
 
-	# Validates +cnpj_or_cnpj+ as either a CPF or a CNPJ by verifying that the check digits match.
+	# Validates +cpf_or_cnpj+ as either a CPF or a CNPJ by verifying that the check digits match.
 	#
 	# 	CpfCnpj.valid_cpf_cnpj?("12345678900") # invalid CPF
 	# 	# => false
