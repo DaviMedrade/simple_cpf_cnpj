@@ -1,9 +1,9 @@
 # simple_cpf_cnpj
 
 [![Gem Version](https://badge.fury.io/rb/simple_cpf_cnpj.svg)](https://rubygems.org/gems/simple_cpf_cnpj)
-[![Build Status](https://travis-ci.org/davidsantos-br/simple_cpf_cnpj.svg)](https://travis-ci.org/davidsantos-br/simple_cpf_cnpj)
-[![Code Climate](https://codeclimate.com/github/davidsantos-br/simple_cpf_cnpj/badges/gpa.svg)](https://codeclimate.com/github/davidsantos-br/simple_cpf_cnpj)
-[![Test Coverage](https://codeclimate.com/github/davidsantos-br/simple_cpf_cnpj/badges/coverage.svg)](https://codeclimate.com/github/davidsantos-br/simple_cpf_cnpj/coverage)
+![Tests](https://github.com/DaviMedrade/simple_cpf_cnpj/actions/workflows/run-tests.yml/badge.svg)
+[![Maintainability](https://api.codeclimate.com/v1/badges/365c37a70f61436932a4/maintainability)](https://codeclimate.com/github/DaviMedrade/simple_cpf_cnpj/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/365c37a70f61436932a4/test_coverage)](https://codeclimate.com/github/DaviMedrade/simple_cpf_cnpj/test_coverage)
 
 **Versão em Português:** [README-pt.md](rdoc-ref:README-pt.md)
 
