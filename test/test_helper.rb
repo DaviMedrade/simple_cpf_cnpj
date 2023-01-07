@@ -1,5 +1,3 @@
-require "codeclimate-test-reporter" if RUBY_VERSION > '1.8.7' && RUBY_PLATFORM != 'java'
-CodeClimate::TestReporter.start if ENV['CODECLIMATE_REPO_TOKEN'] && defined?(CodeClimate)
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
 require 'simple_cpf_cnpj'
 
