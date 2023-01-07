@@ -28,8 +28,8 @@ EOT
 	spec.extra_rdoc_files = ['README.md', 'README-pt.md', 'LICENSE', 'LICENSE-pt']
 	spec.rdoc_options  << '--title' << 'simple_cpf_cnpj -- CPF/CNPJ utility methods' << '--main' << 'README.md'
 
-	spec.add_development_dependency "bundler", "~> 1.10"
-	spec.add_development_dependency "rake", "~> 10.0"
+	spec.add_development_dependency "bundler", "> 1.10"
+	spec.add_development_dependency "rake"
 	spec.add_development_dependency "minitest"
 	spec.add_development_dependency "rdoc"
 end
