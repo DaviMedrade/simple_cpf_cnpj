@@ -15,7 +15,7 @@ The module provides methods to differentiate a CPF from a CNPJ, format, and vali
 
 ## Compatibility
 
-The code is tested with Ruby (1.8.7, 1.9.2, 1.9.3, 2.0.0, 2.1, and 2.2), JRuby, and Ruby Enterprise Edition 1.8.7.
+The code is tested with MRI Ruby 2.0-3.2, JRuby, and TruffleRuby.
 
 ## Installation
 
