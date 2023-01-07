@@ -106,10 +106,10 @@ Após fazer checkout do repositório, execute `bin/setup` para instalar as depen
 ## Contribuindo
 
 Relatórios de bugs e pull requests são bem-vindos. Envie pelo GitHub:
-https://github.com/davidsantos-br/simple_cpf_cnpj/issues
+https://github.com/DaviMedrade/simple_cpf_cnpj/issues
 
 ## Licença e copyright
 
-Copyright © 2015 David Santos
+Copyright © 2015-2023 Davi Medrade
 
 Este software é publicado sob a licença MIT, que pode ser encontrada no arquivo [LICENSE](rdoc-ref:LICENSE-pt).
