@@ -1,7 +1,5 @@
 name: run-tests
 on: [push]
-env:
-  CC_TEST_REPORTER_ID: 78cf86ace5d24f5d0417cf92d63d5bf039a2a3023678acfec103fe36d4c4b0e4
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -18,11 +16,10 @@ jobs:
           bundler-cache: true
       - name: Install dependencies
         run: bundle install
-      - name: Download CodeClimate reporter
-        run: curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-      - run: chmod +x ./cc-test-reporter
-      - run: ./cc-test-reporter before-build
-      - name: Run tests
-        run: bundle exec rake test
-      - name: Report results to CodeClimate
-        run: ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+      - name: Test & publish code coverage
+        uses: paambaati/codeclimate-action@v3.2.0
+        env:
+          CC_TEST_REPORTER_ID: 78cf86ace5d24f5d0417cf92d63d5bf039a2a3023678acfec103fe36d4c4b0e4
+        with:
+          coverageCommand: bundle exec rake test
+          coverageLocations: ${{github.workspace}}/coverage:simplecov
