@@ -135,8 +135,4 @@ module CpfCnpj
 		return false unless digits.ascii_only?
 		_mod11_check_digit(digits[0..-2], mult_max) && _mod11_check_digit(digits, mult_max)
 	end
-
-	def self._int_value(str) # :nodoc:
-		str.ord - 48
-	end
 end

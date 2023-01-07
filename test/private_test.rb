@@ -35,16 +35,4 @@ class CpfCnpjTest::PrivateTest < CpfCnpjTest
 			refute(CpfCnpj._mod11_check(INVALID_CNPJ, MAX_MULTI_CNPJ))
 		end
 	end
-
-	class IntValueTest < CpfCnpjTest
-		def test_returns_the_int_value
-			assert_equal(0, CpfCnpj._int_value("0"))
-			assert_equal(9, CpfCnpj._int_value("9"))
-		end
-
-		def test_doesnt_clamp_the_value
-			assert_equal(-15, CpfCnpj._int_value("!"))
-			assert_equal(17, CpfCnpj._int_value("A"))
-		end
-	end
 end
