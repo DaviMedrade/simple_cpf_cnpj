@@ -21,4 +21,4 @@ jobs:
           CC_TEST_REPORTER_ID: 78cf86ace5d24f5d0417cf92d63d5bf039a2a3023678acfec103fe36d4c4b0e4
         with:
           coverageCommand: bundle exec rake test
-          coverageLocations: ${{github.workspace}}/coverage:simplecov
+          coverageLocations: ${{github.workspace}}/coverage/*.json:simplecov
