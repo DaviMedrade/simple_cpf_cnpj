@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+require "bundler/setup"
+require "simple_cpf_cnpj"
+require "benchmark"
+
+SAMPLE_SIZE = 1_000_000
+SAMPLE_LENGTH = 14 # CPF = 11; CNPJ = 14
+
+subjects = Array.new(SAMPLE_SIZE){|_| "%0#{SAMPLE_LENGTH}u" % rand(10**SAMPLE_LENGTH) }
+
+Benchmark.bmbm do |x|
+	x.report do
+		subjects.each{|c| CpfCnpj.valid_cpf_cnpj?(c) }
+	end
+end
