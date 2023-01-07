@@ -6,8 +6,8 @@ require 'simple_cpf_cnpj/version'
 Gem::Specification.new do |spec|
 	spec.name          = "simple_cpf_cnpj"
 	spec.version       = CpfCnpj::VERSION
-	spec.authors       = ["David Santos"]
-	spec.email         = ["david@dsantosdev.com"]
+	spec.authors       = ["Davi Medrade"]
+	spec.email         = ["davi@medrade.com.br"]
 
 	spec.summary       = %q{Provides the module CpfCnpj, with methods that detect, format, and validate CPFs and CNPJs.}
 	spec.description   = <<EOT
@@ -17,7 +17,7 @@ Provides the module CpfCnpj, with methods that detect, validate, and format CPFs
 
 Fornece o módulo CpfCnpj, com funções que detectam, validam, e formatam CPFs e CNPJs.
 EOT
-	spec.homepage      = "https://github.com/davidsantos-br/simple_cpf_cnpj"
+	spec.homepage      = "https://github.com/DaviMedrade/simple_cpf_cnpj"
 	spec.license       = "MIT"
 
 	spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
