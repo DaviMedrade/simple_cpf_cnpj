@@ -14,8 +14,11 @@ require "simple_cpf_cnpj/version"
 # One way to do that is, for example:
 # 	CpfCnpj.valid_cpf?(formatted_cpf.gsub(/\D/, ''))
 module CpfCnpj
-	BLACKLIST_CPF = %w{00000000000 11111111111 22222222222 33333333333 44444444444 55555555555 66666666666 77777777777 88888888888 99999999999} # :nodoc:
-	BLACKLIST_CNPJ = %w{00000000000000 11111111111111 22222222222222 33333333333333 44444444444444 55555555555555 66666666666666 77777777777777 88888888888888 99999999999999} # :nodoc:
+	LENGTH_CPF = 11
+	LENGTH_CNPJ = 14
+	BLACKLIST_CPF = (0..9).collect{|n| n.to_s * LENGTH_CPF } # :nodoc:
+	BLACKLIST_CNPJ = (0..9).collect{|n| n.to_s * LENGTH_CNPJ } # :nodoc:
+
 	# Checks the length of +cpf_or_cnpj+ to determine if it's a CPF or a CNPJ.
 	#
 	# 	CpfCnpj.type_of("12345678987") # 11 characters
@@ -34,8 +37,8 @@ module CpfCnpj
 			raise(ArgumentError, "argument must be a string or nil")
 		end
 		case cpf_cnpj.length
-		when 11 ; :cpf
-		when 14 ; :cnpj
+		when LENGTH_CPF ; :cpf
+		when LENGTH_CNPJ ; :cnpj
 		else ; nil
 		end
 	end
@@ -132,11 +135,7 @@ module CpfCnpj
 		_mod11_check_digit(digits[0..-2], mult_max) && _mod11_check_digit(digits, mult_max)
 	end
 
-	# ruby 1.8.7 doesn't have String#ord, and in versions after 1.8.7 String#[num] returns a
-	# one-character string instead of the byte value of the character.
-	# Since the return of this is always used to perform what is essentially an unclamped to_i
-	# on the first character, do it right here.
 	def self._int_value(str) # :nodoc:
-		(str.respond_to?(:ord) ? str.ord : str[0]) - 48
+		str.ord - 48
 	end
 end
