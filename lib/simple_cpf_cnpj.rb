@@ -119,19 +119,20 @@ module CpfCnpj
 	def self._mod11_check_digit(digits, mult_max) # :nodoc:
 		sum = 0
 		mult = 2
-		digits[0..-2].reverse.each_char do |digit|
-			digit = _int_value(digit)
-			return false unless digit.between?(0, 9)
+		digits[0..-2].reverse.each_byte do |digit|
+			digit -= 48
+			return false if digit < 0 || digit > 9
 			sum += mult * digit
 			mult += 1
 			mult = 2 if mult > mult_max
 		end
 		sum = 11 - (sum % 11)
 		sum = 0 if sum > 9
-		_int_value(digits[-1]) == sum
+		(digits[-1].ord - 48) == sum
 	end
 
 	def self._mod11_check(digits, mult_max) # :nodoc:
+		return false unless digits.ascii_only?
 		_mod11_check_digit(digits[0..-2], mult_max) && _mod11_check_digit(digits, mult_max)
 	end
 
